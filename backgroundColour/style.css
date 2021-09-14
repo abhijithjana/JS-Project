@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.heading{
+    
+    display: flex;
+    margin: 1%;
+    
+}
+
+.box{
+    display: flex;
+    justify-content: end;
+    width: 50%;
+}
+.h{
+    width: 50%;
+}
+.select{
+    margin: 0 8%;
+}
+
+.color{
+   height: 100vh;
+   
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.color h1{
+    background-color: rgb(31, 29, 29);
+    color: cornsilk;
+    padding: 1%;
+}
+.color button{
+  
+    margin-top: 2%;
+}

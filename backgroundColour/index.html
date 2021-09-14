@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BackGround</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="heading">
+        <h1 class='h'>colour flipper</h1>
+        <div class="box"> <h1 class="select" onclick="select(1)">hex</h1>
+            <h1 class="select" onclick="select(0)">simple</h1></div>
+       
+    </div>
+    <div class="color" id="color">
+         <h1 >BackGround Colour:<span id="bg" style="color: blue;"></span></h1>
+        <button id="btn" onclick="change() " >click me</button> 
+       
+    </div>
+
+    <script>
+        let state=0;
+         function select(x){
+             state=x;
+
+         }
+       function change() {
+        const hex=['1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+       const colors=['Pink','Crimson','Red','Maroon','Brown','Misty Rose','Salmon','Coral','Orange-Red'];
+        console.log(state);
+        let background="";
+        if(state){
+            for(let  i=0;i<6;i++)
+        {
+          background=background+hex[(Math.floor(Math.random()*16))];
+          }  
+          if(background.includes('undefined')){
+              background='';
+             change(); 
+            }
+            else{
+                
+                let c=document.getElementById('color')
+            c.style.backgroundColor='#'+background;
+          document.getElementById('bg').innerHTML=" #"+background;
+          let b=document.getElementById('btn')
+            b.style.backgroundColor='#'+background;
+  
+            }
+
+        }
+        else{
+            let length=colors.length;
+            background=colors[(Math.floor(Math.random()*length))]; 
+            let c=document.getElementById('color')
+            c.style.backgroundColor=background;
+          document.getElementById('bg').innerHTML=" "+background;
+
+          let b=document.getElementById('btn')
+            b.style.backgroundColor=background;
+  
+        }
+
+        
+     
+       
+
+       }
+      
+
+    </script>
+</body>
+</html>
